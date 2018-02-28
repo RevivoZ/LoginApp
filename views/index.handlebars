@@ -1,0 +1,17 @@
+<h2 class="page-header">Dashboard</h2>
+<p>Welcome to your dashboard</p>
+
+
+{{#each accounts}}
+<div class="alert btn-primary">
+	<h1>{{this.name}}</h1>
+	<form method="post" action="/users/remove">
+		<input type="hidden" name="username" value="{{this.username}}">
+		<button type="submit" class="btn btn-danger btn-lg btn-block">Delete User</button>
+	</form>
+	<form method="post" action="/users/profile">
+		<input type="hidden" name="profile" value="{{this.id}}">
+		<button type="submit" class="btn btn-warning btn-lg btn-block">Edit User</button>
+	</form>
+</div>
+{{/each}}
